@@ -40,7 +40,7 @@ class Page {
 				', $this->content ,'
 					
 				<div id="footer">
-					<p>',$this->title,' | tmnen.xyz © 2015-',date("Y"),'</p>
+					<p>',$this->title,' | tmnen.xyz</p>
 				</div>
 			</div>
 				<script src="./js/main.js"></script>
