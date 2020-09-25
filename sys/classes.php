@@ -2,18 +2,15 @@
 
 class Page {
 	private $title;
-	private $css;
 	private $content;
 
-	function __construct($t, $cs, $cn){
+	function __construct($t, $cn){
 		$this->title = $t;
-		$this->css = $cs;
 		$this->content = $cn;
 	}
 
-	function update($t, $cs, $cn){
+	function update($t, $cn){
 		$this->title = $t;
-		$this->css = $cs;
 		$this->content = $cn;
 	}
 
@@ -28,7 +25,6 @@ class Page {
 			    <meta name=viewport content="width=device-width, initial-scale=.75">
 				<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 				<link rel="stylesheet" href="../css/def.css">
-				<link rel="stylesheet" href="../css/basic.css">
 				',$this->css,'
 				<script src="../js/functions.js"></script>
 			</head>
@@ -49,7 +45,6 @@ class Page {
 			</html>';
 	}
 }
-
 
 
 ?>
