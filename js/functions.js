@@ -12,9 +12,26 @@ var log = (txt, lvl) => {
 		}
 	},
 	$ = (id) => document.getElementById(id),
-	evt = (id, e, f) => id.addEventListener(e, f()),
-	init = (id, w, h) => {
-		id.width = w;
-		id.height = h;
-		return id.getContext('2d');
-	};
+	evt = (id, e, f) => id.addEventListener(e, f, true);
+
+class Windw {
+	constructor(e, w, h){
+		this.e = e;
+		this.e.width = w;
+		this.e.height = h;
+		this.c = this.e.getContext('2d');
+		this.run = null;
+		this.loop = () => {
+			this.run()
+			requestAnimationFrame(this.loop);
+		};
+	}
+	update(w, h){
+		this.e.width = w;
+		this.e.height = h;
+		this.c = this.e.getContext('2d');
+	}
+	tick(f){
+		this.run = f;
+	}
+}

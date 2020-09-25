@@ -1,19 +1,21 @@
 	
-var ctx = init($('bg'), innerWidth, innerHeight);
+var win = new Windw($('bg'), innerWidth, innerHeight),
+	ctx = win.c;
+	
 
-let style = 0;
-ctx.moveTo(0, 0);
-
-updateProxy = (time) => {
-
+win.tick(()=>{
+	ctx.moveTo(0, 0);
 	ctx.clearRect(0,0,innerWidth,innerHeight);
 	ctx.strokeStyle = "darkred";
 	ctx.moveTo(0, 200);
 	ctx.lineTo(innerWidth, 200);
-
 	ctx.stroke();
+})
 
-	requestAnimationFrame(updateProxy);
-}
+evt(window, 'resize', ()=>{
+	win.update(innerWidth, innerHeight);
+	log('resized')
+});
 
-updateProxy();
+win.run();
+//win.loop();
