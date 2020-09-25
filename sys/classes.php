@@ -2,18 +2,15 @@
 
 class Page {
 	private $title;
-	private $css;
 	private $content;
 
-	function __construct($t, $cs, $cn){
+	function __construct($t, $cn){
 		$this->title = $t;
-		$this->css = $cs;
 		$this->content = $cn;
 	}
 
-	function update($t, $cs, $cn){
+	function update($t, $cn){
 		$this->title = $t;
-		$this->css = $cs;
 		$this->content = $cn;
 	}
 
