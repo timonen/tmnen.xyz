@@ -44,7 +44,7 @@ if(isset($_GET['file']))
 			$page->update(array("title"=>"Image", "content"=>'<h1>'.$_GET['fn'].'<h1>'));
 			break;
 		
-		case 'vid':
+		case 'video':
 			$page->update(array("title"=>"Video", "content"=>'<h1>'.$_GET['fn'].'<h1>'));
 			break;		
 
