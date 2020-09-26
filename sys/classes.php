@@ -16,7 +16,7 @@ class Page {
 		$this->css = $arr['css'];
 		$this->sjs = $arr['ejs'];
 		$this->ejs = $arr['ejs'];
-		$this->u_body($arr['body']);
+		$this->u_body($arr['debug']);
 	}
 
 	function u_body($id){

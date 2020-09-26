@@ -15,7 +15,7 @@ if(isset($_GET['err']))
 			break;
 
 		case '500':
-			$page->update(array("title"=>"Server Error", "content"=>$ERROR_500));
+			$page->update(array("title"=>"SERVER ERROR", "content"=>$ERROR_500));
 			break;
 	}
 
@@ -30,7 +30,7 @@ if(isset($_GET['page']))
 			break;
 
 		case 'debug':
-			$page->update(array("body"=>1, "title"=>"TEST", "content"=>"REEEE"));
+			$page->update(array("title"=>"DEBUG", "content"=>"debug page", "debug"=>1));
 			break;
 
 		default:
