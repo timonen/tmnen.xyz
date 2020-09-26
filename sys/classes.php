@@ -21,8 +21,15 @@ class Page {
 
 	function u_body($id){
 		if(isset($id)){
-
-			$this->body = "<h1>".$this->content."</h1>";
+			$this->body = '
+				<html lang="Fi">
+				<head>
+				<title>'.$this->title.'</title>
+				</head>
+				<body>
+					<h1>'.$this->content.'</h1>
+				</body>
+				</html>';
 
 		}else{
 			$this->body = '<!doctype html>
