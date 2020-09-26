@@ -2,7 +2,6 @@
 var win = new Windw($('bg'), innerWidth, innerHeight),
 	ctx = win.c;
 	
-
 win.tick(()=>{
 	ctx.moveTo(0, 0);
 	ctx.clearRect(0,0,innerWidth,innerHeight);
@@ -14,7 +13,6 @@ win.tick(()=>{
 
 evt(window, 'resize', ()=>{
 	win.update(innerWidth, innerHeight);
-	log('resized');
 	win.run();
 });
 

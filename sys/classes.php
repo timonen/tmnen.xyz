@@ -5,7 +5,7 @@ class Page {
 		$this->title = $arr['title'];
 		$this->content = $arr['content'];
 		$this->css = $arr['css'];
-		$this->sjs = $arr['ejs'];
+		$this->sjs = $arr['sjs'];
 		$this->ejs = $arr['ejs'];
 		$this->u_body($arr['body']);
 	}
@@ -14,7 +14,7 @@ class Page {
 		$this->title = $arr['title'];
 		$this->content = $arr['content'];
 		$this->css = $arr['css'];
-		$this->sjs = $arr['ejs'];
+		$this->sjs = $arr['sjs'];
 		$this->ejs = $arr['ejs'];
 		$this->u_body($arr['debug']);
 	}

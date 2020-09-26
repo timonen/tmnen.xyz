@@ -1,8 +1,8 @@
 <?php
 
 include __DIR__.'/sys/variables.php';
-include __DIR__.'/sys/classes.php';
 include __DIR__.'/sys/functions.php';
+include __DIR__.'/sys/classes.php';
 
 session_start();
 
@@ -41,7 +41,7 @@ if(isset($_GET['page']))
 if(isset($_GET['file']))
 	switch ($_GET['file']) {
 		case 'image':
-			$page->update(array("title"=>"Image", "content"=>'<h1>'.$_GET['fn'].'<h1>'));
+			$page->update(array("title"=>"Image", "content"=>'<img src="'.image($_GET['fn']).'"></img>'));
 			break;
 		
 		case 'video':
