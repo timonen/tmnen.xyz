@@ -33,6 +33,7 @@ class Page {
 			<div id="nav"></div>
 			<canvas id="bg"></canvas>
 			<div id="inside">
+			
 				', $this->content ,'
 					
 				<div id="footer">
