@@ -27,7 +27,7 @@ class Page {
 				<title>'.$this->title.'</title>
 				</head>
 				<body>
-					<h1>'.$this->content.'</h1>
+					'.$this->content.'
 				</body>
 				</html>';
 
@@ -74,5 +74,61 @@ class Page {
 	}
 }
 
+class Upload {
+	private $ifolder = "/nas/d1/media/i/images/";
+	private $vfolder = "/nas/d1/media/i/videos/";
+
+	private $img_mime = array("image/gif","image/jpeg","image/png","image/pjpeg");
+	private $vid_mime = array("video/webm","video/ogg","video/mpeg");
+
+	private $file;
+	private $name;
+
+	function __construct($f){
+		$this->file = $f;
+		if(in_array($f["file"]["type"],$this->img_mime)){
+			$this->image();
+		}else if(in_array($f["file"]["type"],$this->vid_mime)){
+			$this->video();
+		}
+	}
+
+	function newname(){
+		return time().'.'.pathinfo($this->file["file"]["name"], PATHINFO_EXTENSION);
+	}
+
+	function image(){
+		$this->name = $this->newname();
+		echo $this->img_compress($this->ifolder.$this->name);
+
+	}
+
+	function video($ext){
+
+	}
+
+	function img_compress($out){
+		$info = getimagesize($this->file["file"]["tmp_name"]);
+			
+			// WRITE THE COMPRESSION TOO >:(((
+
+			switch ($info['mime']) {
+				case 'image/jpeg':
+					move_uploaded_file($this->file["file"]["tmp_name"], $out);
+					break;
+
+				case 'image/gif': 
+					move_uploaded_file($this->file["file"]["tmp_name"], $out);
+					break;
+
+				case 'image/png': 
+					move_uploaded_file($this->file["file"]["tmp_name"], $out);
+					break;
+			}
+		header('Location: /i/'.$this->name);
+		//return $out;
+	}
+
+}
 
 ?>

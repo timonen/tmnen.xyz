@@ -29,8 +29,12 @@ if(isset($_GET['page']))
 			$page->update(array("title"=>"TEST", "content"=>$PAGE_TEST));
 			break;
 
+		case 'upload':
+			$page->update(array("title"=>"Upload", "content"=>$PAGE_UPLOAD));
+			break;
+
 		case 'debug':
-			$page->update(array("title"=>"DEBUG", "content"=>"debug page", "debug"=>1));
+			$page->update(array("title"=>"DEBUG", "content"=>debug(), "debug"=>1));
 			break;
 
 		default:
@@ -38,7 +42,12 @@ if(isset($_GET['page']))
 			break;
 	}
 
-if(isset($_GET['file']))
+else if(isset($_GET['up'])){
+	$page->update(array("title"=>"DEBUG", "content"=>"", "debug"=>1));
+	$up = new Upload($_FILES);
+}
+
+else if(isset($_GET['file']))
 	switch ($_GET['file']) {
 		case 'image':
 			$page->update(array("title"=>"Image", "content"=>'<img src="'.image($_GET['fn']).'"></img>'));
@@ -52,7 +61,6 @@ if(isset($_GET['file']))
 			$page->update(array("title"=>"ERROR", "content"=>$ERROR_400));
 			break;
 	}
-
 
 
 
