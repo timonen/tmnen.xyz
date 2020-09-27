@@ -108,27 +108,16 @@ class Upload {
 	}
 
 	function img_compress($out){
-		$info = getimagesize($this->file["file"]["tmp_name"]);
-		switch ($info['mime']) {
-			case 'image/jpeg':
-				move_uploaded_file($this->file["file"]["tmp_name"], $out);
-				break;
-		
-			case 'image/gif': 
-				move_uploaded_file($this->file["file"]["tmp_name"], $out);
-				break;
+			
+		move_uploaded_file($this->file["file"]["tmp_name"], $out);
 
-			case 'image/png': 
-				move_uploaded_file($this->file["file"]["tmp_name"], $out);
-				break;
-		}
 		$img = new Imagick(realpath($out));
 		$profiles = $img->getImageProfiles("icc", true);
 		$img->stripImage();
 		if(!empty($profiles))
 			$img->profileImage("icc", $profiles['icc']);
 
-		$img->setImageCompressionQuality(70);
+		$img->setImageCompressionQuality(85);
 		$img->writeImage(realpath($out));
 		$img->clear();
 		$img->destroy();
