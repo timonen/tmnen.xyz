@@ -75,8 +75,8 @@ class Page {
 }
 
 class Upload {
-	private $ifolder = "/nas/d1/media/i/images/";
-	private $vfolder = "/nas/d1/media/i/videos/";
+	private $ifolder = MPATH."/images/";
+	private $vfolder = MPATH."/videos/";
 
 	private $img_mime = array("image/gif","image/jpeg","image/png","image/pjpeg");
 	private $vid_mime = array("video/webm","video/ogg","video/mpeg");

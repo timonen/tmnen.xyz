@@ -1,5 +1,6 @@
 <?php
 
+include __DIR__.'/sys/secret.php';
 include __DIR__.'/sys/variables.php';
 include __DIR__.'/sys/functions.php';
 include __DIR__.'/sys/classes.php';
