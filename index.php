@@ -1,9 +1,9 @@
 <?php
 
-include __DIR__.'/sys/secret.php';
-include __DIR__.'/sys/variables.php';
-include __DIR__.'/sys/functions.php';
-include __DIR__.'/sys/classes.php';
+require __DIR__.'/sys/secret.php';
+require __DIR__.'/sys/variables.php';
+require __DIR__.'/sys/functions.php';
+require __DIR__.'/sys/classes.php';
 
 session_start();
 
@@ -26,10 +26,6 @@ if(isset($_GET['page']))
 			$page->update(array("title"=>"Second", "content"=>$PAGE_SECOND));
 			break;
 
-		case 'test':
-			$page->update(array("title"=>"TEST", "content"=>$PAGE_TEST));
-			break;
-
 		case 'upload':
 			$page->update(array("title"=>"Upload", "content"=>$PAGE_UPLOAD));
 			break;
@@ -44,7 +40,6 @@ if(isset($_GET['page']))
 	}
 
 else if(isset($_GET['up'])){
-	$page->update(array("title"=>"DEBUG", "content"=>"", "debug"=>1));
 	$up = new Upload($_FILES);
 }
 
@@ -55,7 +50,7 @@ else if(isset($_GET['file']))
 			break;
 		
 		case 'video':
-			$page->update(array("title"=>"Video", "content"=>'<h1>'.$_GET['fn'].'<h1>'));
+			$page->update(array("title"=>"Video", "content"=>'<h1>Video</h1>'));
 			break;		
 
 		default:

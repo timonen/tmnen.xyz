@@ -75,8 +75,8 @@ class Page {
 }
 
 class Upload {
-	private $ifolder = MPATH."/images/";
-	private $vfolder = MPATH."/videos/";
+	private $ifolder = IMG_PATH;
+	private $vfolder = VID_PATH;
 
 	private $img_mime = array("image/gif","image/jpeg","image/png","image/pjpeg");
 	private $vid_mime = array("video/webm","video/ogg","video/mpeg");
@@ -99,12 +99,7 @@ class Upload {
 
 	function image(){
 		$this->name = $this->newname();
-		echo $this->img_compress($this->ifolder.$this->name);
-
-	}
-
-	function video($ext){
-
+		$this->img_compress($this->ifolder.$this->name);
 	}
 
 	function img_compress($out){
@@ -125,6 +120,15 @@ class Upload {
 		header('Location: /i/'.$this->name);
 	}
 
+	function video(){
+		$this->name = $this->newname();
+		move_uploaded_file($this->file["file"]["tmp_name"], $this->vfolder.$this->name);
+		header('Location: /v/'.$this->name);
+	}
+
+	function __destruct(){
+		
+	}
 }
 
 ?>
