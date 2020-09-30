@@ -9,6 +9,13 @@ win.tick(()=>{
 	ctx.moveTo(0, 200);
 	ctx.lineTo(innerWidth, 200);
 	ctx.stroke();
+
+	ctx.moveTo(0, 0);
+	ctx.clearRect(0,0,innerWidth,innerHeight);
+	ctx.strokeStyle = "darkred";
+	ctx.moveTo(0, 500);
+	ctx.lineTo(innerWidth, 500);
+	ctx.stroke();
 })
 
 evt(window, 'resize', ()=>{
