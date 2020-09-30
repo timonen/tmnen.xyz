@@ -91,6 +91,10 @@ h1 {
 	font-size: 2rem;
 }
 
+#upld {
+	position: absolute;
+}
+
 #footer {
 	font-size: 11px;
 	bottom:0;
