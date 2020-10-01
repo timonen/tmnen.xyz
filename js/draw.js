@@ -2,23 +2,12 @@
 var win = new Windw($('bg'), innerWidth, innerHeight),
 	ctx = win.c;
 	
-win.tick(()=>{
-	ctx.moveTo(0, 0);
-	ctx.clearRect(0,0,innerWidth,innerHeight);
-	ctx.strokeStyle = "darkred";
-	ctx.moveTo(0, 200);
-	ctx.lineTo(innerWidth, 200);
-	ctx.stroke();
-
-	ctx.moveTo(0, 0);
-	ctx.clearRect(0,0,innerWidth,innerHeight);
-	ctx.strokeStyle = "darkred";
-	ctx.moveTo(0, 500);
-	ctx.lineTo(innerWidth, 500);
-	ctx.stroke();
+win.tick(() => {
+	// do some background stuff on website
+	// maby some nice animation or something
 })
 
-evt(window, 'resize', ()=>{
+evt(window, 'resize', () => {
 	win.update(innerWidth, innerHeight);
 	win.run();
 });

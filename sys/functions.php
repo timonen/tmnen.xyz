@@ -1,6 +1,6 @@
 <?php
 
-function image($fn){
+function image($fn) {
 	$path = IMG_PATH.$fn;
 	$type = pathinfo($path, PATHINFO_EXTENSION);
 	$data = file_get_contents($path);
@@ -8,9 +8,8 @@ function image($fn){
 	return $base64;
 }
 
-function debug(){
+function debug() {
 	print "Debug";
-
 }
 
 ?>
