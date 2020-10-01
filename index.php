@@ -24,16 +24,12 @@ if(isset($_GET['err']))
 
 if(isset($_GET['page']))
 	switch ($_GET['page']) {
-		case 'second':
-			$page->update(array("title" => "Second", "content" => $PAGE_SECOND));
+		case 'debug':
+			$page->update(array("title" => "DEBUG", "content" => debug(), "debug" => 1));
 			break;
 
 		case 'upload':
 			$page->update(array("title" => "Upload", "content" => $PAGE_UPLOAD));
-			break;
-
-		case 'debug':
-			$page->update(array("title" => "DEBUG", "content" => debug(), "debug" => 1));
 			break;
 
 		default:
