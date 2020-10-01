@@ -18,7 +18,6 @@ var newCircs = () => {
 }
 
 w.listen((e)=>{
-	log(e);
 	if(e.data=="get"){
 		let asd = newCircs();
 		w.command(asd);
