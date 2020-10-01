@@ -44,7 +44,7 @@ else if(isset($_GET['up'])){
 else if(isset($_GET['file']))
 	switch ($_GET['file']) {
 		case 'image':
-			$page->update(array("title" => "Image", "content" => "<img src=\"".image($_GET['fn'])."\"></img>"));
+			$page->update(array("title" => "Image", "content" => "<img class=\"center\" src=\"".image($_GET['fn'])."\"></img>"));
 			break;
 		
 		case 'video':
