@@ -24,16 +24,12 @@ if(isset($_GET['err']))
 
 if(isset($_GET['page']))
 	switch ($_GET['page']) {
-		case 'second':
-			$page->update(array("title" => "Second", "content" => $PAGE_SECOND));
+		case 'debug':
+			$page->update(array("title" => "DEBUG", "content" => debug(), "debug" => 1));
 			break;
 
 		case 'upload':
 			$page->update(array("title" => "Upload", "content" => $PAGE_UPLOAD));
-			break;
-
-		case 'debug':
-			$page->update(array("title" => "DEBUG", "content" => debug(), "debug" => 1));
 			break;
 
 		default:
@@ -48,7 +44,7 @@ else if(isset($_GET['up'])){
 else if(isset($_GET['file']))
 	switch ($_GET['file']) {
 		case 'image':
-			$page->update(array("title" => "Image", "content" => "<img src=\"".image($_GET['fn'])."\"></img>"));
+			$page->update(array("title" => "Image", "content" => "<img class=\"center\" src=\"".image($_GET['fn'])."\"></img>"));
 			break;
 		
 		case 'video':

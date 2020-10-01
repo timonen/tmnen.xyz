@@ -44,6 +44,7 @@ class Page {
 	
 					<link href=\"https://fonts.googleapis.com/css2?family=Open+Sans&display=swap\" rel=\"stylesheet\">
 					<link rel=\"stylesheet\" href=\"../css/def.css\">
+					<link rel=\"stylesheet\" href=\"../css/main.css\">
 					".$this->css."
 	
 					<script src=\"../js/functions.js\"></script>
@@ -51,10 +52,13 @@ class Page {
 				</head>
 				<body>
 				
-				<div id=\"nav\"></div>
 				<canvas id=\"bg\"></canvas>
 				<div id=\"inside\">
-	
+					<div id=\"nav\">
+						<a href=\"/\">main</a>
+						<a href=\"/p/upload\">upload</a>
+					</div>
+
 					". $this->content ."
 	
 					<div id=\"footer\">
