@@ -3,7 +3,6 @@ var win = new Windw($('bg'), innerWidth, innerHeight),
 	ctx = win.c;
 	
 var circles = [];
-var w;
 
 if(typeof(w) == "undefined"){
 	w = new Syncs('../js/worker.js');
@@ -18,10 +17,6 @@ var newCircs = () => {
 }
 
 w.listen((e)=>{
-	if(e.data=="get"){
-		let asd = newCircs();
-		w.command(asd);
-	}
 	if(e.data.length > 5){
 		circles = e.data; 
 	}
@@ -46,7 +41,6 @@ win.tick(() => {
 
 		circles[i].x += circles[i].dx;
 		circles[i].y += circles[i].dy;
-
 	}
 })
 
@@ -55,7 +49,7 @@ evt(window, 'resize', () => {
 	win.run();
 });
 
-w.command("sync");
+w.command(["get",innerWidth,innerHeight]);
 
 
 //win.run();
