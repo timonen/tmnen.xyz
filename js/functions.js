@@ -35,6 +35,19 @@ class Windw {
 		this.run = f;
 	}
 }
+class Syncs {
+	constructor(f){
+		this.op = new Worker(f);
+	}
+
+	listen(f){
+		this.op.addEventListener('message', f);
+	}
+
+	command(x){
+		this.op.postMessage(x);
+	}
+}
 class Circl {
 	constructor(){
 		this.rad = (Math.random() * 10)*10;
@@ -42,16 +55,5 @@ class Circl {
 		this.y = Math.random() * (innerHeight - this.rad * 2) + this.rad;
 		this.dx = Math.random() - 0.5;
 		this.dy = Math.random() - 0.5;
-	}
-	update(){
-		if(this.x+this.rad > innerWidth || this.x -this.rad < 0){
-			this.dx = -this.dx;
-		}
-		if(this.y+this.rad > innerHeight || this.y -this.rad < 0){
-			this.dy = -this.dy;
-		}
-
-		this.x += this.dx;
-		this.y += this.dy;
 	}
 }
