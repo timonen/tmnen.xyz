@@ -101,6 +101,7 @@ var	distance = (x1,y1,x2,y2) => {
 
 	} 
 	newCircs = () => {
+		objects = [];
 		for (var i = 0; i < 15; i++) {
 			let rad = (Math.random() * 100)+20;
 			//let rad = 60;
@@ -154,7 +155,7 @@ var last = timestamp(),
 		})
 	},
 	render = (dt) => {
-		ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+		ctx.strokeStyle = 'rgba(255,255,255,0.2)';
 		ctx.fillStyle = 'rgba(0,0,0,0)';
 		objects.forEach(obj => {
 			obj.draw();
@@ -163,6 +164,7 @@ var last = timestamp(),
 
 evt(window, 'resize', () => {
 	win.update(innerWidth, innerHeight);
+	newCircs();
 });
 
 w.command(["get",innerWidth,innerHeight]);

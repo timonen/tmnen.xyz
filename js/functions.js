@@ -27,7 +27,7 @@ class Windw {
 	update(w, h) {
 		this.e.width = w;
 		this.e.height = h;
-		this.c = this.e.getContext('2d');
+		this.c = this.e.getContext('2d', { alpha:false });
 	}
 }
 class Syncs {
