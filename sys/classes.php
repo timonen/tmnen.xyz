@@ -56,18 +56,19 @@ class Page {
 				<div id=\"inside\">
 					<div id=\"nav\">
 						<a href=\"/\">main</a>
+						<a href=\"/p/gallery\">gallery</a>
 						<a href=\"/p/upload\">upload</a>
 					</div>
-
+					<div id=\"content\">
 					". $this->content ."
-	
+					</div>
 					<div id=\"footer\">
 						<p>".$this->title." | tmnen.xyz</p>
 					</div>
 				</div>
-					<script src=\"../js/main.js\"></script>
 					".$this->ejs."
 					<script async src=\"../js/draw.js\"></script>
+					<script src=\"../js/main.js\"></script>
 				</body>
 			</html>";
 		}
@@ -123,7 +124,7 @@ class Upload {
 		$img->clear();
 		$img->destroy();
 
-		header('Location: /i/'.$this->name);
+		header('Location: /img/'.$this->name);
 	}
 
 	function video() {

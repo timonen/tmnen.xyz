@@ -10,4 +10,6 @@ $PAGE_UPLOAD = "<form id=\"upld\" class=\"center\" action=\"/?file&up\" method=\
 	<input class=\"center\" type=\"submit\" name=\"submit\" value=\"Upload\"/>
 </form>";
 
+
+
 ?>
