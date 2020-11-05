@@ -1,3 +1,5 @@
 adv/*
 s/*
+test/*
+sys/*.sh
 sys/secret.php
